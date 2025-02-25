@@ -1,0 +1,55 @@
+{
+  "name": "fast-rpc",
+  "version": "0.1.0",
+  "description": "A lightweight, type-safe RPC framework for TypeScript",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "vitest",
+    "bench": "vitest bench",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write 'src/**/*.ts'",
+    "prepublishOnly": "npm run build",
+    "example": "tsx examples/basic-usage.ts"
+  },
+  "keywords": [
+    "rpc",
+    "typescript",
+    "type-safe",
+    "api",
+    "client"
+  ],
+  "author": "ByteKai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bytekai/fast-rpc"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "@types/bun": "^1.2.3"
+  },
+  "dependencies": {
+    "tinybench": "^3.1.1",
+    "zod": "^3.0.0"
+  },
+  "peerDependencies": {
+    "zod": "^3.0.0"
+  }
+}
